@@ -1,5 +1,5 @@
 const homeController = (req, res) => {
-  res.send("Hello World!");
+  res.send("Welcome.");
 };
 
 module.exports = {
