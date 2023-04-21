@@ -12,5 +12,5 @@ app.use('/home', require('./api/routes/homeRoutes'))
 app.use('/login', require('./api/routes/authRoutes'))
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Server listening on http://localhost:${port}/`)
 })
