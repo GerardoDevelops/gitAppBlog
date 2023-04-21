@@ -1,0 +1,18 @@
+# Configuración de Git para archivos de texto.
+* text=auto
+
+# Configuración de Git para manejar los saltos de línea.
+*.js eol=lf
+*.jsx eol=lf
+*.ts eol=lf
+*.tsx eol=lf
+*.html eol=lf
+*.css eol=lf
+*.scss eol=lf
+*.md eol=lf
+
+# Configuración de Git para manejar los espacios en blanco.
+*.ts     indent=spaces=2
+*.js     indent=spaces=2
+*.json   indent=spaces=2
+*.md     trim_trailing_whitespace=true
