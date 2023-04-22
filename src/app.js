@@ -13,5 +13,5 @@ app.use('/login', require('./api/routes/authRoutes'))
 app.use('/blog', require('./api/routes/blogRoutes'))
 
 app.listen(port, () => {
-  console.log(`Server listening on http://localhost:${port}/`)
+  console.log(`Server listening on http://localhost:${port}/.`)
 })
