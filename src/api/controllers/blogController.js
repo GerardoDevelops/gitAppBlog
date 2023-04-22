@@ -27,8 +27,8 @@ const findById = (req, res) => {
 
 const update = (req, res) => {
     const { id } = req.params;
-    const existId = checkIfIdExist(id, blogList);
 
+    const existId = checkIfIdExist(id, blogList);
     if(!existId) return res.status(401).json({msg: `No existe un registro con id ${id}`})
 
     const { name, tag, description } = req.body;
@@ -42,9 +42,21 @@ const update = (req, res) => {
     res.status(200).json({id, ...blogList[id]})
 }
 
+const deletes = (req, res) =>{
+    const { id } = req.params;
+
+    const existId = checkIfIdExist(id, blogList);
+    if(!existId) return res.status(401).json({msg: `No existe un registro con id ${id}`})
+
+    delete blogList[id];
+
+    res.status(200).json(blogList)
+}
+
 module.exports = {
     createController,
     getController,
     findById,
-    update
+    update,
+    deletes
 }
