@@ -9,8 +9,7 @@ const createController = (req, res) => {
     const uuid = uuidv4();
     blogList[uuid] = { name, tag, description };
 
-    res.status(200).json({msg: 'Create succesfully'})
-    // res.status(200).json({msg: 'Create succesfully', blog: {uuid, ...blogList[uuid]}})
+    res.status(200).json({msg: 'Create succesfully', blog: {uuid, ...blogList[uuid]}})
   };
 
 const getController = (req, res) => {
