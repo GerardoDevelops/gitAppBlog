@@ -16,7 +16,14 @@ const getController = (req, res) => {
     res.status(200).json(blogList)
 }
 
+const findById = (req, res) => {
+    const { id } = req.params;
+    console.log(id);
+    res.status(200).json({ blog: { id, ...blogList[id] } })
+}
+
 module.exports = {
     createController,
-    getController
+    getController,
+    findById
 }
