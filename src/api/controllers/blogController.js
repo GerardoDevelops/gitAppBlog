@@ -7,11 +7,14 @@ const createController = (req, res) => {
 
     blogList[name] = { tag, description };
 
-    console.log(blogList);
-
     res.status(200).json({msg: 'Create succesfully'})
   };
 
+const getController = (req, res) => {
+    res.status(200).json(blogList)
+}
+
 module.exports = {
-    createController
+    createController,
+    getController
 }
