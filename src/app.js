@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(helmet());
-app.use(cors({  origin: 'https://api.chucknorris.io/jokes/'
+app.use(cors({  origin: 'https://api.chucknorris.io'
 }));
 
 app.use('/home', require('./api/routes/homeRoutes'))
