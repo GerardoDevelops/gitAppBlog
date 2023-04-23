@@ -3,15 +3,15 @@ const { checkIfIdExist, checkIfNameBlogExist } = require('../../common');
 const blogList = {};
 
 const createController = (req, res) => {
-    const { name, tag, description } = req.body;
+    const { name, tag, description, producer } = req.body;
 
-    if( !name || !tag || !description ) res.status(200).json({ msg: 'Information incomplete' });
+    if( !name || !tag || !description || !producer ) res.status(200).json({ msg: 'Information incomplete' });
 
     const isBlogNameExist = checkIfNameBlogExist(name, blogList);
     if (isBlogNameExist) return res.status(409).json({msg: 'Nombre no disponible'})
 
     const uuid = uuidv4();
-    blogList[uuid] = { name, tag, description };
+    blogList[uuid] = { name, tag, description, producer };
 
     res.status(200).json({msg: 'Create succesfully', blog: {uuid, ...blogList[uuid]}})
   };
