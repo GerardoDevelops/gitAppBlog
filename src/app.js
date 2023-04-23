@@ -11,6 +11,7 @@ app.use(cors())
 app.use('/home', require('./api/routes/homeRoutes'))
 app.use('/login', require('./api/routes/authRoutes'))
 app.use('/blog', require('./api/routes/blogRoutes'))
+app.use('/chuck', require('./api/routes/chuckNorrisRoutes'))
 
 app.listen(port, () => {
   console.log(`Server listening on http://localhost:${port}/`)
